@@ -11,10 +11,13 @@ class CustomSearchIcon extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(.05),
           borderRadius: BorderRadius.circular(16)),
-      child: const Center(
-        child: Icon(
-          Icons.search,
-          size: 35,
+      child: Center(
+        child: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.search,
+            size: 30,
+          ),
         ),
       ),
     );

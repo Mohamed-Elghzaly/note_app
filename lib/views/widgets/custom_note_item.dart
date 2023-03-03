@@ -1,23 +1,22 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class NoetItem extends StatelessWidget {
-  const NoetItem({super.key});
+class NoteItem extends StatelessWidget {
+  const NoteItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 20, bottom: 20, left: 20),
+      padding: const EdgeInsets.only(top: 20, bottom: 20, left: 20),
       decoration: BoxDecoration(
-        color: Color(0xffD2A96D),
+        color: const Color(0xffD2A96D),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           ListTile(
-            title: Text(
+            title: const Text(
               'Flutter tips',
               style: TextStyle(color: Colors.black, fontSize: 30),
             ),
@@ -31,7 +30,7 @@ class NoetItem extends StatelessWidget {
             ),
             trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   FontAwesomeIcons.trash,
                   color: Colors.black,
                   size: 30,
