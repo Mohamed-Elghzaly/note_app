@@ -12,29 +12,29 @@ class ShowBottomSheet extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 40),
       child: SingleChildScrollView(
-        child: addNoteForm(),
+        child: AddNoteForm(),
       ),
     );
   }
 }
 
-class addNoteForm extends StatefulWidget {
-  const addNoteForm({
+class AddNoteForm extends StatefulWidget {
+  const AddNoteForm({
     super.key,
   });
 
   @override
-  State<addNoteForm> createState() => _addNoteFormState();
+  State<AddNoteForm> createState() => _AddNoteFormState();
 }
 
-class _addNoteFormState extends State<addNoteForm> {
+class _AddNoteFormState extends State<AddNoteForm> {
   final formKey = GlobalKey<FormState>();
   String? title, subtitle;
-  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
     return Form(
-      autovalidateMode: autoValidateMode,
+      autovalidateMode: autovalidateMode,
       key: formKey,
       child: Column(
         children: [
@@ -65,7 +65,7 @@ class _addNoteFormState extends State<addNoteForm> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
               } else {
-                autoValidateMode = AutovalidateMode.always;
+                autovalidateMode = AutovalidateMode.always;
                 setState(() {});
               }
             },
