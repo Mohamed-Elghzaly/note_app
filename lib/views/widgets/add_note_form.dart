@@ -12,11 +12,11 @@ class AddNoteForm extends StatefulWidget {
   });
 
   @override
-  State<AddNoteForm> createState() => _AddNoteFormState();
+  State<AddNoteForm> createState() => AddNoteFormState();
 }
 
-class _AddNoteFormState extends State<AddNoteForm> {
-  final formKey = GlobalKey<FormState>();
+class AddNoteFormState extends State<AddNoteForm> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   String? title, subtitle;
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
@@ -55,12 +55,13 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 onTep: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-                    var noteModel = NoteViewModel(
+                    var noteModel = NoteModel(
                       title: title!,
-                      content: subtitle!,
+                      subtitle: subtitle!,
                       date: DateTime.now().toString(),
                       color: Colors.red.value,
                     );
+                    print(noteModel);
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                   } else {
                     autovalidateMode = AutovalidateMode.always;
