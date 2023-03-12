@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../cubit/cubit/notes_cubit.dart';
 import '../../models/note_view_model.dart';
-import 'custom_note_item.dart';
+import 'note_item.dart';
 
 class NotesListView extends StatelessWidget {
   const NotesListView({Key? key}) : super(key: key);
@@ -13,8 +13,7 @@ class NotesListView extends StatelessWidget {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
         BlocProvider.of<NotesCubit>(context).fetchAllNotes();
-        List<NoteModel> notes =
-            BlocProvider.of<NotesCubit>(context).notes ?? [];
+        List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes!;
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: ListView.builder(

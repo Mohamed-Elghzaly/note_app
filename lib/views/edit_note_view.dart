@@ -3,13 +3,16 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:note_app/views/widgets/edit_note_view_body.dart';
 
-class EditNoteView extends StatelessWidget {
-  const EditNoteView({super.key});
+import '../models/note_view_model.dart';
 
+class EditNoteView extends StatelessWidget {
+  const EditNoteView({super.key, required this.note});
+  
+final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: EditNoteViewBody(),
+      body: EditNoteViewBody(note: note,),
     );
   }
 }
