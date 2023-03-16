@@ -71,7 +71,6 @@ class AddNoteFormState extends State<AddNoteForm> {
                       date: formattedCurrentDate,
                       color: Colors.red.value,
                     );
-                    print(noteModel);
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                   } else {
                     autovalidateMode = AutovalidateMode.always;

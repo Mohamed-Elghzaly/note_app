@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:note_app/cubit/add_note_cubit.dart/add_note_cubit.dart';
-import '../../constants.dart';
 import '../../cubit/cubit/notes_cubit.dart';
 import 'add_note_form.dart';
-import 'custom_bottom.dart';
-import 'custom_text_field.dart';
-
 class ShowBottomSheet extends StatelessWidget {
   const ShowBottomSheet({super.key});
 
